@@ -1,0 +1,307 @@
+@borderColor: #ddd;
+@testColor: rgb(201, 242, 242);
+@regularColor: rgb(249, 243, 201);
+@hourCellHeight: 80px;
+
+.hl-calendar {
+    width: 100%;
+    ul{
+        list-style: none;
+        margin:0px;
+        padding:0px;
+    }
+    .button-active{
+        color: #20a0ff;
+        border-color: #20a0ff;
+    }
+    button{
+        display: inline-block;
+        line-height: 1;
+        white-space: nowrap;
+        cursor: pointer;
+        background: #fff;
+        border: 1px solid #bfcbd9;
+        border-color: #c4c4c4;
+        color: #1f2d3d;
+        -webkit-appearance: none;
+        text-align: center;
+        box-sizing: border-box;
+        outline: none;
+        margin: 0;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        padding: 10px 15px;
+        font-size: 14px;
+        border-radius: 4px;
+    }
+    button:hover {
+       
+    }
+    &-tools-wrapper {
+        .calendar-tools {
+            text-align: center;
+            overflow: hidden;
+            &-left {
+                float: left;
+            }
+            &-center {
+                display: inline-block;
+                line-height: 36px;
+            }
+            &-right {
+                float: right;
+            }
+            .el-button-active {
+                z-index: 1;
+                color: #20a0ff;
+                border-color: #20a0ff;
+            }
+        }
+    }
+    &-body-wrapper {
+        position: relative;
+        margin: 20px 0;
+        border: 1px solid @borderColor;
+        border-bottom: 0;
+        border-right:none;
+    }
+    &.hl-calendar-week,
+    &.hl-calendar-day {
+        .hl-calendar-header-wrapper{
+            .calendar-header-day{
+                .parent{
+                    .son{
+                        width:100%;
+
+                    }
+                    .son:first-child{
+                        width:0px;
+    
+                    }
+                }
+            }
+        }
+        .hl-calendar-body-wrapper {
+           height:auto;
+           
+         
+        }
+    }
+    &.hl-calendar-week{
+        .hl-calendar-cols-wrapper-week{
+            overflow-x:hidden;
+        }
+    }
+    &-header-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: #fff;
+       
+        border-bottom: none;
+
+        z-index: 1;
+        .calendar-header {
+            border-bottom: 1px solid @borderColor;
+            div.parent {
+                list-style-type:none;  
+                margin:0px;
+                padding:0px;
+                text-align: center;
+                font-weight: bold;
+                overflow: hidden;
+                div.son {
+                    float:left;
+                    width: percentage(1/7);
+                    &:last-child {
+                        border-right: 0;
+                    }
+                    &:first-child {
+                       
+                    }
+                }
+            }
+        }
+        .calendar-header-month {
+            div.parent {
+                div.son:first-child {
+
+                   width: percentage(1/7)
+                }
+            }
+        }
+    }
+    &-content-wrapper {
+        min-height: 600px;
+        margin-top: 19px;
+        overflow-y:auto;
+        padding-bottom:5px;
+        .hl-calendar-cols-wrapper {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            .calendar-col {
+                flex-grow: 0;
+                flex-shrink: 0;
+                border-bottom: 1px solid @borderColor;
+                overflow: hidden;
+                .cell-wrapper {
+                    height: 100%;
+                    width: 100%;
+                    overflow: hidden;
+                    .calendar-cell {
+                        overflow: hidden;
+                        .lesson-slip {
+                            color: #666;
+                        }
+                        .lesson-slip-test {
+                            background: @testColor;
+                        }
+                        .lesson-slip-regular {
+                            background: @regularColor;
+                        }
+                    }
+                }
+            }
+        }
+        .hl-calendar-cols-wrapper-month {
+            flex-direction: column;
+            justify-content: space-between;
+            .calendar-col {
+
+                .cell-wrapper {
+                    .calendar-cell-outer{
+                        height: auto;
+                        overflow-y: auto;
+                        
+                       
+                       
+                        width: percentage(1/7);
+                        float:left;
+                    }
+                    .calendar-cell {
+                        min-height: 100px;
+                        border-right:1px solid #DDD;
+                        position: relative;
+                        padding-bottom: 30px;
+                        .right-date {
+                            text-align: center;;
+                            color: #aaa;
+                            margin:0px;
+                            padding:0px;
+                            border-bottom:1px solid #ddd;
+                            
+                            padding:3px 15px;
+                        }
+                        .lesson-slip {
+                            margin: 0 2px 2px;
+                            text-indent: 5px;
+                        }
+                        .showMore {
+                            margin: 0 2px;
+                            color: #20a0ff;
+                            cursor: pointer;
+                            &:hover {
+                                text-decoration: underline;
+                            }
+                        }
+
+                        &-between {
+                            .right-date {
+                                color: #333;
+                               
+                            }
+                        }
+                      
+                        .checkbox_part {
+                            background: white;
+                            float: left;
+                            width: 20px;
+                            height: 100%;
+                            text-indent: 0px;
+                            .el-checkbox {
+                                height: 20px;
+                            }
+                        }
+                        .lesson-slip_inner {
+                            overflow: hidden;
+                            .info,
+                            .action {
+                                float: left;
+                                line-height: 20px;
+                            }
+                            .action {
+                                .el-button {
+                                    margin: 0px;
+                                    padding: 0px;
+                                }
+                            }
+                        }
+                        .lesson-slip-old {
+                            background: #80848f;
+                            color: white;
+                            border: none;
+                            .el-button {
+                                color: #91b0ce;
+                            }
+                        }
+                        .lesson-slip-new {
+                            background: white;
+                            color: #495060;
+                            border: 1px solid #91b0ce; // height:18px;
+                            border-radius: 6%;
+                            .el-button {
+                                color: #91b0ce;
+                            }
+                        }
+                    }
+                    .calendar-cell-between {
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+        .hl-calendar-cols-wrapper-week,
+        .hl-calendar-cols-wrapper-day {
+            width: auto;
+            height: auto;
+            margin-left: 60px;
+            overflow-y:auto;
+            .calendar-col {
+                width:100%;
+                
+                .calendar-cell-outer{
+                    height:60px;
+                    border-bottom:1px solid #DDD;
+                    border-right:1px solid #ddd;
+                }
+            }
+        }
+      
+    }
+    &-side-wrapper {
+        float: left;
+        .calendar-side {
+            border-left:1px solid #ddd;
+            ul {
+                border-bottom:1px solid #DDD;
+                text-align: center;
+                li {
+                    padding:0px 15px;
+                    height: 60px;
+                    line-height:60px;
+                    border-right: 1px solid @borderColor;
+                    border-bottom: 1px solid @borderColor;
+                    &:last-child {
+                        border-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
