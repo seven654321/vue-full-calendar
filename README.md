@@ -1,30 +1,19 @@
 # calendar
 
-> calendar
 
-## Build Setup
 
-``` bash
-# install dependencies
-npm install
+## 概览
 
-# serve with hot reload at localhost:8080
-npm run dev
+技术栈
 
-# build for production with minification
-npm run build
+- Node.js (>7)
+- vue 2.0
 
-# build for production and view the bundle analyzer report
-npm run build --report
+本地启动
+- 下载源码
+- yarn install
+- npm run dev
 
-# run unit tests
-npm run unit
 
-# run e2e tests
-npm run e2e
 
-# run all tests
-npm test
-```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
