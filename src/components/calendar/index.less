@@ -65,6 +65,7 @@
         border: 1px solid @borderColor;
         border-bottom: 0;
         border-right:none;
+        border-left:none;
     }
     &.hl-calendar-week,
     &.hl-calendar-day {
@@ -91,7 +92,11 @@
     &.hl-calendar-week{
         .hl-calendar-cols-wrapper-week{
             overflow-x:hidden;
-            
+            .calendar-col {
+                border-bottom: none;
+                
+                width:percentage(1/7);
+            }
         }
         .hl-calendar-header-wrapper{
             .parent{
@@ -108,7 +113,7 @@
         background: #fff;
        
         border-bottom: none;
-
+        border-left:1px solid #ddd;
         z-index: 1;
         .calendar-header {
             border-bottom: 1px solid @borderColor;
@@ -142,9 +147,10 @@
     }
     &-content-wrapper {
         min-height: 600px;
-        margin-top: 19px;
+        margin-top: 21px;
         overflow-y:auto;
-        padding-bottom:5px;
+        margin-bottom:5px;
+        border-left:1px solid #ddd;
         .hl-calendar-cols-wrapper {
             height: 100%;
             width: 100%;
@@ -274,10 +280,11 @@
         .hl-calendar-cols-wrapper-day {
             width: auto;
             height: auto;
-            margin-left: 60px;
+            // margin-left: 60px;
             overflow-y:auto;
             .calendar-col {
                 width:100%;
+                border-bottom: none;
                 
                 .calendar-cell-outer{
                     height:60px;
@@ -291,9 +298,10 @@
     &-side-wrapper {
         float: left;
         .calendar-side {
-            border-left:1px solid #ddd;
+            // 
             ul {
                 border-bottom:1px solid #DDD;
+                // border-left:1px solid #ddd;
                 text-align: center;
                 li {
                     padding:0px 15px;
