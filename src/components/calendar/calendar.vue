@@ -158,7 +158,7 @@
         },
         methods: {
             bodyScroll() {
-                // this.$headerWrapper.style.top = this.$bodyWrapper.scrollTop + 'px';
+              
             },
             handleDragDrop(param){
                 this.$emit('dragDrop',param);
@@ -211,7 +211,6 @@
 
                 }
                 cols.push(cells);
-                console.log('resolveDayCols=======================', cols);
                 return cols;
             },
             resolveWeekCols(events) {
@@ -236,7 +235,7 @@
                         cells = [];
                     }
                 }
-                console.log('resolveWeekCols=======================', cols);
+
                 return cols;
             },
             resolveMonthCols(events) {
@@ -244,16 +243,16 @@
                 let cells = [];
                 let cols = [];
                 currentDateMoment.endOf('month');
+                console.log('currentDateMoment',currentDateMoment.format('YYYY/MM/DD'));
                 let endDate = currentDateMoment.add(1, 'd').format('YYYY-MM-DD');
                 currentDateMoment.subtract(1, 'd').startOf('month');
                 let startWeek = currentDateMoment.toDate().getDay();
                 let startDate = currentDateMoment.subtract(1, 'd').format('YYYY-MM-DD');
                 currentDateMoment.subtract((startWeek + 6) % 7, 'days');
-
                 for (let i = 1; i < 43; i++) {
                     currentDateMoment.add(1, 'days');
                     let date = currentDateMoment.format('YYYY/MM/DD');
-
+                    // console.log('currentDateMoment',currentDateMoment.format('YYYY/MM/DD'));
                     let event = events[date];
                     let cell = {
                         date: currentDateMoment.format('YYYY-MM-DD'),
